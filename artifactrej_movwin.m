@@ -36,27 +36,3 @@ end
 trialsvalid=triallist>0;
 trials_clean=trials(allinclchans,:,trialsvalid);
 end
-
-% function [trials_clean] = artifactrej(trials,allinclchans,artf_th, perc_chan)
-% %Artifact rejection of trial for all channels if trial bad in one channel,
-% %given 100 uV peak to peak
-% 
-% % trials=std_ERP_alltr_windowed;
-% % allinclchans=Chans;
-% % artf_th=100;
-% 
-% triallist=1:size(trials,3);
-% badchans=zeros(1,size(allinclchans,2));
-% for j=1:size(allinclchans,2)
-%     chan=allinclchans(j);
-%     peaktopeak=(squeeze(max(trials(chan,:,:),[],2))')-(squeeze(min(trials(chan,:,:),[],2))');
-%     rej=find(peaktopeak>artf_th);
-%     if ~isempty(rej)
-%         badchans(j)=1;
-%     end
-%     triallist(rej)=0;
-% end
-% 
-% trialsvalid=triallist>0;
-% trials_clean=trials(allinclchans,:,trialsvalid);
-% end
